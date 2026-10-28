@@ -352,3 +352,79 @@ a { color: inherit; text-decoration: none; }
 .skills-caution {color:var(--muted)!important;border-top:1px solid var(--line);padding-top:10px;margin-top:17px;}
 @media(max-width:1100px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:700px){.tools-grid{grid-template-columns:1fr;}.diagram-toolbar{flex-wrap:wrap;}.mermaid-svg{padding:12px;}}
+/* Lectura de archivos — adjuntos por conversación */
+.hidden-upload-input { position:absolute; width:1px; height:1px; opacity:0; overflow:hidden; pointer-events:none; }
+.compose-dragging { border-color:#8a76ed!important; box-shadow:0 0 0 4px rgba(138,118,237,.16)!important; }
+.drop-indicator { position:absolute; inset:7px; background:var(--elevated); border:2px dashed #8f7ce4; border-radius:12px; z-index:3; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:750; color:var(--purple); pointer-events:none; }
+.attach-button { display:inline-flex; align-items:center; gap:7px; padding:7px 9px; border:1px solid var(--line); color:var(--purple); background:var(--elevated); border-radius:9px; font-weight:700; font-size:11px; }
+.attach-button:disabled { opacity:.55; cursor:not-allowed; }
+.attach-button:hover:not(:disabled) { background:var(--soft); }
+.compose-agent { display:inline-flex; align-items:center; gap:6px; font-size:10.5px; color:var(--mid); }
+.compose-files { display:flex; flex-wrap:wrap; padding:10px 12px 0; gap:8px; }
+.compose-file { min-width:0; max-width:230px; border:1px solid var(--line); background:var(--elevated); border-radius:11px; padding:8px; display:flex; align-items:center; gap:8px; color:var(--purple); }
+.compose-file>span { display:flex; flex-direction:column; min-width:0; gap:2px; }
+.compose-file strong { color:var(--ink); font-size:10.5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.compose-file small { color:var(--muted); font-size:9px; }
+.compose-file button { display:grid; place-items:center; border:0; background:transparent; color:var(--muted); padding:2px; border-radius:5px; cursor:pointer; }
+.compose-file button:hover { color:#c75467; background:var(--soft); }
+.message-sources { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.message-sources>span { display:flex; align-items:center; gap:5px; padding:6px 9px; border:1px solid var(--line); border-radius:9px; background:var(--soft); font-size:10px; color:var(--mid); }
+.upload-error { color:#bd3e55; padding:8px 10px; margin:4px 0; border:1px solid rgba(189,62,85,.2); background:rgba(189,62,85,.07); border-radius:9px; font-size:11px; }
+@media (max-width:640px) { .compose-agent {display:none} .compose-file {max-width:155px} .compose-note {font-size:9px} }
+
+/* ISO Studio 4.0 — Investigación web */
+.web-mode { display:inline-flex; align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--line);border-radius:9px;background:var(--elevated);color:var(--mid);font-weight:750;font-size:10.5px;cursor:pointer;white-space:nowrap; }
+.web-mode-on {color:#377a6d;background:rgba(52,169,138,.10);border-color:rgba(52,169,138,.35);}
+.web-mode-off {opacity:.68}
+.web-mode:hover {border-color:#a599df}
+.web-warning {display:inline-grid;place-items:center;width:14px;height:14px;border-radius:50%;background:rgba(190,105,39,.15);color:#ad632c;font-size:10px;font-weight:900}
+.web-results {margin:15px 0 13px;padding:13px 14px;border:1px solid var(--line);border-radius:13px;background:var(--soft)}
+.web-results-title {display:flex;align-items:center;gap:7px;color:var(--mid);font-size:11.5px;font-weight:800;margin-bottom:9px}
+.web-results-title small {font-weight:500;color:var(--muted)}
+.web-results-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.web-source-link {display:flex;gap:9px;align-items:center;min-width:0;border:1px solid var(--line);padding:10px;border-radius:9px;background:var(--elevated);text-decoration:none!important;color:var(--ink)!important;transition:border .2s,transform .2s}
+.web-source-link:hover {border-color:#9990d7;transform:translateY(-1px)}
+.web-source-ref {border-radius:6px;color:var(--purple);background:rgba(135,112,224,.11);font-size:9.5px;font-weight:900;padding:5px}
+.web-source-detail {display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.web-source-detail strong {font-size:10.8px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.web-source-detail small {font-size:9.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.web-empty {font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:690px) {.web-results-grid {grid-template-columns:1fr;} .web-mode {font-size:9.5px;padding:7px;} .compose-label {gap:5px;}}
+
+/* ISO Studio 5: Estudio visual */
+.visual-page {flex:1;overflow:auto;padding:36px clamp(18px,4vw,54px);color:var(--text-primary,#302b42);}
+.visual-header{display:flex;align-items:center;gap:19px;margin:8px 0 25px;max-width:1050px;}
+.visual-hero-icon{display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:20px;background:#ebe6ff;color:#6548cb;flex-shrink:0;}
+.visual-eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:800;color:#8069c7;}
+.visual-header h1{font-size:30px;letter-spacing:-.8px;margin:2px 0 5px;}
+.visual-header p{margin:0;line-height:1.5;color:var(--text-secondary,#7f7a91);font-size:14px;}
+.visual-columns{display:grid;grid-template-columns:minmax(290px,430px) minmax(300px,1fr);gap:20px;max-width:1130px;align-items:start;}
+.visual-card{background:var(--surface,#fff);border:1px solid var(--border,#e9e6f1);border-radius:19px;padding:24px;box-shadow:0 3px 20px rgba(32,24,72,.035);min-width:0;}
+.visual-card h2{display:flex;align-items:center;gap:10px;font-size:18px;margin:0 0 14px;}
+.visual-muted{font-size:12px;color:var(--text-secondary,#777);line-height:1.5;margin:0 0 18px;}
+.visual-card label{font-size:12px;font-weight:700;display:block;margin:16px 0 8px;}
+.visual-card input,.visual-card textarea{width:100%;font-size:14px;padding:12px 14px;border:1px solid #ded9ea;border-radius:12px;background:var(--surface,#fff);color:inherit;font-family:inherit;box-sizing:border-box;}
+.visual-card textarea{resize:vertical;line-height:1.55;}
+.visual-pills{display:flex;gap:7px;flex-wrap:wrap;}
+.visual-pills button{border-radius:100px;padding:8px 12px;background:transparent;border:1px solid #dad5e8;color:inherit;cursor:pointer;font-size:12px;}
+.visual-pills button.active{border-color:#7153d4;background:#eeeaff;color:#5a3ab8;font-weight:700;}
+.visual-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:13px;border:0;border-radius:12px;background:#7153d4;color:#fff;margin-top:18px;font-weight:700;cursor:pointer;}
+.visual-submit:disabled{opacity:.55;cursor:not-allowed;}
+.visual-error{display:flex;align-items:center;gap:9px;padding:12px;border-radius:12px;background:#fff1f2;color:#a82040;margin-top:13px;font-size:13px;}
+.visual-note{display:flex;align-items:flex-start;gap:8px;padding-top:17px;margin-top:16px;border-top:1px solid #ece8f4;color:var(--text-secondary,#777);font-size:12px;line-height:1.5;}
+.visual-placeholder{display:flex;min-height:300px;align-items:center;justify-content:center;flex-direction:column;gap:10px;border:1px dashed #c8bee8;background:#f9f7ff;border-radius:14px;color:#8a77bd;text-align:center;}
+.visual-placeholder span{font-size:12px;}
+.visual-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:16px;}
+.visual-image{min-width:0;border:1px solid #e3dfec;border-radius:13px;overflow:hidden;padding-bottom:10px;}
+.visual-image img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#f7f4ff;}
+.visual-image>div{padding:10px 12px;display:flex;flex-direction:column;gap:5px;}
+.visual-image>div span{color:var(--text-secondary,#777);font-size:11px;}
+.visual-image a{display:flex;align-items:center;justify-content:center;gap:6px;margin:3px 12px;padding:8px 10px;color:#6247bb;border:1px solid #d7cafa;border-radius:9px;font-size:12px;text-decoration:none;font-weight:700;}
+@media(max-width:900px){.visual-columns{grid-template-columns:1fr;}.visual-page{padding:20px;}.visual-header h1{font-size:26px;}}
+
+/* ISO Studio 7.1: pantalla de bloqueo preventivo por especialización */
+.iso-scope-lock { margin: min(9vh, 74px) auto; max-width: 650px; padding: 38px 34px; text-align: center; border: 1px solid var(--border, #dcd7e8); border-radius: 22px; background: var(--surface, #ffffff); box-shadow: 0 15px 55px rgba(40,32,80,.08); }
+.iso-scope-lock-icon { display: inline-flex; padding: 18px; border-radius: 20px; color: #6440bf; background: #f2edff; margin-bottom: 20px; }
+.iso-scope-lock h1 { margin: 12px 0 18px; font-size: clamp(22px,3vw,31px); }
+.iso-scope-lock p { line-height: 1.7; margin: 12px 0; }
+.iso-scope-lock-note { font-size: 13px; opacity: .76; }
